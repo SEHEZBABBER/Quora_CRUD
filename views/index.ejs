@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <h1 id="title">Quoera Posts</h1>
+    <% for(let post of posts) { %>
+        <div class="post_box">
+            <h3>Title : <%= post.title %></h3>
+            <p>Content : <%= post.content %></p>
+            <h5>Author : <%= post.author %></h5>
+            <h6>UpVotes : <%= post.upvotes %></h6>
+            <h6>Comments : <%= post.comments %></h6>
+            <button>Upvote</button>
+            <div class="tags">
+                <% for(let str of post.tags) { %>
+                    <p class="tag_design"><%= str %></p>
+                <% } %>
+            </div>
+            <button>View</button>
+            <button>Edit</button>
+            <button>Delete</button>
+        </div>
+    <% } %>
+    <button class="create"> Create Post </button>
+</body>
+</html>

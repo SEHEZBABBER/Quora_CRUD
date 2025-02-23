@@ -1,0 +1,35 @@
+#title{
+    color: maroon;
+}
+.post_box{
+    background-color: yellow;
+    border: 2px solid black;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 25px;
+    font-size: larger;
+}
+button{
+    background-color: rgb(8, 213, 8);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+}
+.tags{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    flex-direction: row;
+}
+.tag_design{
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border-radius: 20px;
+    font-size: x-small;
+    margin-right: 15px;
+}
+.create{
+    margin-left: 30px;
+}
