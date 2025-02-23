@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Start Writing Your Post</h1>
+        <form action="http://localhost:8080/posts" method="post">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Enter Title Of Your Post" required />
+
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" placeholder="Enter your content here" required></textarea>
+
+            <label for="tags">Tags:</label>
+            <input type="text" id="tags" name="tags" placeholder="Enter Tags, Comma Separated" />
+
+            <label for="author">Author Name:</label>
+            <input type="text" id="author" name="author" placeholder="Author Name" required />
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
