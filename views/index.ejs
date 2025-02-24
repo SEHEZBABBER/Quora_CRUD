@@ -21,9 +21,13 @@
                     <p class="tag_design"><%= str %></p>
                 <% } %>
             </div>
-            <button>View</button>
-            <button>Edit</button>
-            <button>Delete</button>
+            <div class="tags">
+                <button class="view">View</button>
+                <button class="edit">Edit</button>
+                <form method="POST" action="http://localhost:8080/posts/<%= post.id %>?_method=DELETE" class="delete">
+                    <button type="submit">Delete</button>
+                </form>            
+            </div>
         </div>
     <% } %>
     <button class="create"> Add Post </button>

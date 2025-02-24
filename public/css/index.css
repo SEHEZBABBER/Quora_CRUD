@@ -33,3 +33,6 @@ button{
 .create{
     margin-left: 30px;
 }
+.delete , .view , .edit{
+    margin-right: 20px;
+}
