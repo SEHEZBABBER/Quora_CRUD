@@ -104,6 +104,11 @@ app.use(methodOverride('_method'));
 app.listen(8080,()=>{
     console.log("Listening through port 8080");
 });
+app.get('/posts/:id/edit',(req,res)=>{
+  let {id} = req.params;
+  let post = posts.filter((post)=>post.id == id)
+  res.render("edit",{post : post[0]});
+})
 app.get('/posts',(req,res)=>{
     res.render('index',{posts});
 });
@@ -142,5 +147,30 @@ app.delete('/posts/:id', (req, res) => {
     
     posts = posts.filter(post => post.id != id);
 
+    res.redirect('/posts');
+});
+app.patch('/posts/:id', (req, res) => {
+    const {id} = req.params;
+    const { title, content, author, upvotes, tags } = req.body;
+    let post;
+    for(let obj of posts){
+      if(obj.id == id){
+        post = obj;
+      }
+    }
+    if (title) post.title = title;
+    if (content) post.content = content;
+    if (author) post.author = author;
+    if (upvotes !== undefined) post.upvotes = upvotes;
+    if (tags){
+      let arr = [];
+      let str = "";
+      for(let i = 0;i<tags.length;i++){
+        if(tags[i] == ','){
+          arr.push(str);
+        }
+        str+=tags[i];
+      }
+    }
     res.redirect('/posts');
 });
