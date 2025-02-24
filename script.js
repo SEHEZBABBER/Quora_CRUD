@@ -107,6 +107,12 @@ app.listen(8080,()=>{
 app.get('/posts',(req,res)=>{
     res.render('index',{posts});
 });
+app.get('/posts/:id',(req,res)=>{
+    let {id} = req.params;
+    let post = posts.filter((post => post.id == id));
+    console.log(post);
+    res.render("view",{post : post[0]});
+})
 app.get('/create',(req,res)=>{
     res.render('create');
 });

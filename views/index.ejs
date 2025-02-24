@@ -22,7 +22,7 @@
                 <% } %>
             </div>
             <div class="tags">
-                <button class="view">View</button>
+                <button class="view" onclick="window.location.href = `http://localhost:8080/posts/<%= post.id %>`">View</button>
                 <button class="edit">Edit</button>
                 <form method="POST" action="http://localhost:8080/posts/<%= post.id %>?_method=DELETE" class="delete">
                     <button type="submit">Delete</button>

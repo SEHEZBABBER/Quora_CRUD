@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Details</title>
+    <link rel="stylesheet" href="css/post.css">
+</head>
+<body>
+    <div class="post-container">
+        <h2 class="post-id">ID: <%= post.id %></h2>
+        <h1 class="post-title"><%= post.title %></h1>
+        <p class="post-content"><%= post.content %></p>
+        <p class="post-author">Author: <strong><%= post.author %></strong></p>
+        
+        <div class="post-meta">
+            <span class="upvotes">⬆️ <%= post.upvotes %> Upvotes</span>
+            <span class="comments">💬 <%= post.comments %> Comments</span>
+        </div>
+
+        <div class="tags-container">
+            <% post.tags.forEach(tag => { %>
+                <span class="tag"><%= tag %></span>
+            <% }); %>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="back-btn" onclick="window.history.back()">⬅️ Go Back</button>
+        </div>
+    </div>
+</body>
+</html>
